@@ -3,5 +3,14 @@ require 'active_support/inflector'
 require 'interactive_record.rb'
 
 class Student < InteractiveRecord
+  self.column_names.each do |col_name|
+  attr_accessor col_name.to_sym
+end
 
 end
+
+
+
+#
+# Student attr_accessor creates attr_accessors for each column name
+#      Failure/Error: let(:new_student) {Student.new(attributes)}
